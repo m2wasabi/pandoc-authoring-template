@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html$if(lang)$ lang="$lang$"$endif$>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+$for(author-meta)$
+  <meta name="author" content="$author-meta$">
+$endfor$
+$if(date-meta)$
+  <meta name="dcterms.date" content="$date-meta$">
+$endif$
+  <title>$if(title-prefix)$$title-prefix$ - $endif$$pagetitle$</title>
+  <style type="text/css">code{white-space: pre;}</style>
+  <!--[if lt IE 9]>
+    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+$if(quotes)$
+  <style type="text/css">q { quotes: "“" "”" "‘" "’"; }</style>
+$endif$
+$if(highlighting-css)$
+  <style type="text/css">
+$highlighting-css$
+  </style>
+$endif$
+$for(css)$
+  <link rel="stylesheet" href="$css$">
+$endfor$
+  <style type="text/css">
+  #document-body h1,
+  #document-body h2,
+  #document-body h3,
+  #document-body h4,
+  #document-body h5,
+  #document-body h6 {
+    margin-top:-50px;
+    padding-top:50px;
+  };
+  </style>
+$if(math)$
+  $math$
+$endif$
+$for(header-includes)$
+  $header-includes$
+$endfor$
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Some Document Rev.1.0.0</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="index.html">Index</a></li>
+        <li><a href="hoge.html">HOGE</a></li>
+        <li><a href="fuga.html">FUGA</a></li>
+        <li><a href="piyo.html">PIYO</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div class="container-fluid">
+  <div class="row">
+$if(toc)$
+    <div class="bs-docs-sidebar hidden-print hidden-xs hidden-sm sidebar" role="complementary" id="$idprefix$TOC">
+$toc$
+    </div><!-- /#TOC -->
+$endif$
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+
+$if(title)$
+      <header>
+        <h1 class="title page-header">$title$</h1>
+$if(subtitle)$
+        <h1 class="subtitle">$subtitle$</h1>
+$endif$
+$for(author)$
+        <h2 class="author">$author$</h2>
+$endfor$
+$if(date)$
+        <h3 class="date">$date$</h3>
+$endif$
+      </header>
+$endif$
+
+
+$for(include-before)$
+$include-before$
+$endfor$
+<div id="document-body">
+$body$
+</div>
+$for(include-after)$
+$include-after$
+$endfor$
+    </div><!-- /.main -->
+  </div><!-- /.row -->
+</div><!-- /.container-fluid -->
+
+<script type="text/javascript" src="assets/jquery/jquery-2.1.1.min.js"></script>
+<script type="text/javascript">
+    jQuery(function()
+    {
+        jQuery('#TOC').find('ul').addClass('nav');
+        jQuery('#TOC').children('ul').addClass('bs-docs-sidenav');
+    });
+</script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/bootstrap-docs/docs.min.js"></script>
+</body>
+</html>
